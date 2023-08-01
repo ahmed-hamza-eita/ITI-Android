@@ -1,5 +1,6 @@
 package com.hamza.iti_android
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hamza.iti_android.databinding.ActivityMainBinding
@@ -17,18 +18,23 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun init() {
 
         binding.btnOk.setOnClickListener {
-            if (binding.edtText.text.toString().isNotEmpty()) {
+            val name = binding.edtText.text.toString()
+            if (name.isNotEmpty()) {
 
-                binding.txtName.text = "Your Name is " + binding.edtText.text.toString()
+                binding.txtName.text = "Your Name is $name"
+                binding.edtText.text.clear()
+
 
             } else {
                 binding.edtText.error = "Required"
 
             }
         }
+
     }
 
 
