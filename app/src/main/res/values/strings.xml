@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ITI-Android</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="ok">OK</string>
+    <string name="your_name">Your name</string>
 </resources>
