@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ITI-Android</string>
+    <string name="enter_your_name">أدخل اسمك</string>
+    <string name="ok">موافق</string>
+    <string name="your_name">اسمك</string>
+    <string name="login_form">تسجيل الدخول</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">تسجيل الدخول</string>
+</resources>
+
+
+
+

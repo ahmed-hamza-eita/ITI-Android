@@ -5,44 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edtText"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txt_loginForm"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_35sdp"
-        android:layout_marginTop="80dp"
-        android:hint="@string/enter_your_name"
-        android:padding="@dimen/_5sdp"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_13ssp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:text="@string/login_form"
+        android:textColor="@color/forest_green"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/edt_username"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:padding="@dimen/_5sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toBottomOf="@id/txt_loginForm" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="@dimen/_5sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toBottomOf="@id/edt_username" />
+
+
     <Button
-        android:id="@+id/btnOk"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_35sdp"
-        android:text="@string/ok"
-        app:layout_constraintEnd_toEndOf="@+id/edtText"
-        app:layout_constraintStart_toStartOf="@+id/edtText"
-        app:layout_constraintTop_toBottomOf="@id/edtText" />
+        android:layout_marginTop="@dimen/_18sdp"
+        android:backgroundTint="@color/red_scarlet"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password"
+        app:layout_constraintWidth_percent="0.3" />
 
-
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_35sdp"
-        android:text="@string/your_name"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_14sdp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/edtText"
-        app:layout_constraintStart_toStartOf="@+id/edtText"
-        app:layout_constraintTop_toBottomOf="@id/btnOk"
-        app:layout_constraintVertical_bias="0.114" />
+    <ImageView
+        android:id="@+id/change_language"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_margin="@dimen/_16sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/language_24"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
