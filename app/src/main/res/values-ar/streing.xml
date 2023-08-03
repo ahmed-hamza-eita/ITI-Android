@@ -8,6 +8,12 @@
     <string name="username">اسم المستخدم</string>
     <string name="password">كلمة المرور</string>
     <string name="login">تسجيل الدخول</string>
+    <string name="football">كرة القدم</string>
+    <string name="your_hobbies">هواياتك</string>
+    <string name="tennis">تنس</string>
+    <string name="volleyball">كرة الطائرة</string>
+    <string name="male">ذكر</string>
+    <string name="female">أنثى</string>
 </resources>
 
 
