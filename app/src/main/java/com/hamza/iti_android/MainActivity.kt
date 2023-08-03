@@ -4,12 +4,14 @@ import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
+import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import com.hamza.iti_android.databinding.ActivityMainBinding
+import com.hamza.iti_android.utils.showToast
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
-
+    private var arr = arrayListOf<String>()
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
@@ -19,15 +21,68 @@ class MainActivity : AppCompatActivity() {
         setContentView(_binding?.root)
 
         actions()
+        showingToast()
+
+
     }
 
-    private fun actions() {
-        binding.changeLanguage.setOnClickListener {
-            val currentLocale = resources.configuration.locale
-            val targetLocale = if (currentLocale.language == "ar") Locale("en") else Locale("ar")
-            setLocale(targetLocale)
-            recreate()
+    private fun showingToast() {
+        manageCheckBox()
+        manageRadioButton()
+        for (item in arr){
+            showToast(item)
         }
+    }
+
+    private fun manageRadioButton() {
+        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            val nameOfCheckId = findViewById<RadioButton>(checkedId)
+            val name = nameOfCheckId.text.toString()
+            arr.add(name)
+
+        }
+    }
+
+    private fun manageCheckBox() {
+           var msgChcekBox: String? = null
+        binding.apply {
+            sport1.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    arr.add(binding.sport1.text.toString())
+                }
+
+            }
+            sport2.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    arr.add(binding.sport2.text.toString())
+                }
+
+            }
+            sport3.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) {
+                    arr.add(binding.sport2.text.toString())
+                }
+
+            }
+        }
+    }
+
+
+    private fun actions() {
+        binding.apply {
+            changeLanguage.setOnClickListener {
+                val currentLocale = resources.configuration.locale
+                val targetLocale =
+                    if (currentLocale.language == "ar") Locale("en") else Locale("ar")
+                setLocale(targetLocale)
+                recreate()
+            }
+            btnLogin.setOnClickListener {
+                showingToast()
+            }
+        }
+
+
     }
 
     private fun setLocale(locale: Locale) {

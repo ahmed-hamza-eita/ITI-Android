@@ -54,12 +54,12 @@
         android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_18sdp"
         android:backgroundTint="@color/red_scarlet"
         android:text="@string/login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_password"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
         app:layout_constraintWidth_percent="0.3" />
 
     <ImageView
@@ -67,8 +67,79 @@
         android:layout_width="@dimen/_24sdp"
         android:layout_height="@dimen/_24sdp"
         android:layout_margin="@dimen/_16sdp"
-        app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/language_24"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:elevation="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_password">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_hobbies"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/sport1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tennis" />
+
+            <CheckBox
+                android:id="@+id/sport2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/football" />
+
+            <CheckBox
+                android:id="@+id/sport3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/volleyball" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardview1">
+
+        <RadioButton
+            android:id="@+id/male_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/female_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:text="@string/female" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
