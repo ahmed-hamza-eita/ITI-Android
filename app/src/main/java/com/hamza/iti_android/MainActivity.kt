@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         manageCheckBox()
         manageRadioButton()
 
-        showToast("Your userName is ${binding.edtUsername.text.toString()} \n ${arrHobbies.joinToString()} " +
-                "\n ${arrGender.joinToString()}")
+        showToast("Your userName is ${binding.edtUsername.text.toString()} \n Your Hobbies is ${ arrHobbies.joinToString()} " +
+                "\n Your Gender is ${arrGender.joinToString()}")
 
 
     }
