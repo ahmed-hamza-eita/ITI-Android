@@ -51,11 +51,11 @@
 
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/red_scarlet"
-        android:text="@string/login"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

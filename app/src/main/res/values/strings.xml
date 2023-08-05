@@ -13,4 +13,8 @@
     <string name="volleyball">Volleyball</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="next">Next</string>
+    <string name="login_by">Login By</string>
 </resources>

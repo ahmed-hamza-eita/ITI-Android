@@ -1,12 +1,12 @@
-package com.hamza.iti_android
+package com.hamza.iti_android.ui
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
-import android.view.View
-import android.widget.CompoundButton
 import androidx.appcompat.app.AppCompatActivity
 import com.hamza.iti_android.databinding.ActivityMainBinding
+import com.hamza.iti_android.utils.Const
 import com.hamza.iti_android.utils.showToast
 import java.util.Locale
 
@@ -28,23 +28,28 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun showingToast() {
-       // manageInputs()
-        manageCheckBox()
-        manageRadioButton()
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == Const.REQUESTCODE_KEY) {
+            showToast(data?.extras?.getString(Const.LOGINBY_KEY) ?: "ERROR")
 
-        showToast("Your userName is ${binding.edtUsername.text.toString()} \n Your Hobbies is ${ arrHobbies.joinToString()} " +
-                "\n Your Gender is ${arrGender.joinToString()}")
+        }
 
 
     }
 
-    private fun manageInputs() {
-        val text = binding.edtUsername.text
+    private fun intent() {
+        val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra(Const.USERNAME_KEY, binding.edtUsername.text.toString())
+        startActivityForResult(intent, Const.REQUESTCODE_KEY)
+    }
 
-        if (text.equals(null)) {
-          //  arr.add("Your username is ${text}\n")
-        }
+
+    private fun showingToast() {
+        manageCheckBox()
+        manageRadioButton()
+
+
     }
 
 
@@ -53,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             if (b) {
                 binding.femaleCheck.isChecked = false
 
-                arrGender.add("Your gender is ${binding.maleCheck.text.toString()}\n")
+                arrGender.add(binding.maleCheck.text.toString())
 
             }
         }
@@ -61,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         binding.femaleCheck.setOnCheckedChangeListener { _, b ->
             if (b) {
                 binding.maleCheck.isEnabled = false
-                arrGender.add("Your gender is ${binding.maleCheck.text.toString()}\n")
+                arrGender.add(binding.maleCheck.text.toString())
 
 
             }
@@ -107,13 +112,16 @@ class MainActivity : AppCompatActivity() {
                 recreate()
             }
 
-            btnLogin.setOnClickListener {
+            btnNext.setOnClickListener {
 
                 showingToast()
-
+                showToast(
+                    "Your userName is ${binding.edtUsername.text.toString()} \n Your Hobbies is ${arrHobbies.joinToString()} " +
+                            "\n Your Gender is ${arrGender.joinToString()}"
+                )
+                intent()
             }
         }
-
 
     }
 
