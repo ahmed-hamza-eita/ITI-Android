@@ -4,7 +4,10 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.hamza.iti_android.R
 import com.hamza.iti_android.databinding.ActivityMainBinding
 import com.hamza.iti_android.utils.Const
 import com.hamza.iti_android.utils.showToast
@@ -25,6 +28,24 @@ class MainActivity : AppCompatActivity() {
         actions()
         showingToast()
 
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main_activity, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.goto_secondActivity -> intent()
+            R.id.action_exit -> manageDialog()
+        }
+        return super.onOptionsItemSelected(item)
+
+    }
+
+    private fun manageDialog() {
 
     }
 

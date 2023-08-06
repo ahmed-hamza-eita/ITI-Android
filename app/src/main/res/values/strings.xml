@@ -17,4 +17,9 @@
     <string name="google">Google</string>
     <string name="next">Next</string>
     <string name="login_by">Login By</string>
+    <string name="exit">Exit</string>
+    <string name="welcome">Welcome</string>
+    <string name="setting">Setting</string>
+    <string name="share">Share</string>
+    <string name="goto_second_activity">Goto Second Activity</string>
 </resources>
