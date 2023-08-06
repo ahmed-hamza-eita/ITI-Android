@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hamza.iti_android.R
 import com.hamza.iti_android.databinding.ActivityMainBinding
 import com.hamza.iti_android.utils.Const
+import com.hamza.iti_android.utils.CustomDialog
 import com.hamza.iti_android.utils.showToast
 import java.util.Locale
 
@@ -28,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         actions()
         showingToast()
 
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun manageDialog() {
-
+        val customDialog = CustomDialog()
+        customDialog.show(supportFragmentManager, Const.CUSTOM_DIALOG_KEY)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -5,4 +5,5 @@ object Const {
     const val LOGINBY_KEY = "login by"
     const val REQUESTCODE_KEY = 12
     const val RESULTCODE_KEY =  2
+    const val CUSTOM_DIALOG_KEY = "CustomDialogFragment"
 }
